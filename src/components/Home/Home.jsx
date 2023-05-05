@@ -3,6 +3,12 @@ import './home.css'
 import './home.scss'
 import video from '../../assets/summer-24541.mp4'
 import {GrLocation} from 'react-icons/gr'
+import {HiFilter} from 'react-icons/hi'
+import {FiFacebook} from 'react-icons/fi'
+import {AiOutlineInstagram} from 'react-icons/ai'
+import {FaTripadvisor} from 'react-icons/fa'
+import {AiOutlineUnorderedList} from 'react-icons/ai'
+import {TbApps} from 'react-icons/tb'
 
 function Home() {
   return (
@@ -43,6 +49,24 @@ function Home() {
             <div className="input flex">
               <input type="range" max="5000" min="1000" />
             </div>
+          </div>
+
+          <div className="searchOptions">
+            <HiFilter className="icon"/>
+            <span>More Filters</span>
+          </div>
+        </div>
+
+        <div className="homeFooterIcons flex">
+          <div className="rightIcons">
+            <FiFacebook className='icon' />
+            <AiOutlineInstagram className='icon' />
+            <FaTripadvisor className="icon" />
+          </div>
+
+          <div className="leftIcons">
+            <AiOutlineUnorderedList className="icon" />
+            <TbApps className="icon" />
           </div>
         </div>
       </div>
