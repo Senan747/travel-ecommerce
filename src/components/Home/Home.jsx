@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react'
 import './home.css'
 import './home.scss'
 import video from '../../assets/summer-24541.mp4'
@@ -11,6 +12,11 @@ import {AiOutlineUnorderedList} from 'react-icons/ai'
 import {TbApps} from 'react-icons/tb'
 
 function Home() {
+  const [searchValue, setSearchValue] = useState('');
+
+  const handleInputChange = (event) => {
+    setSearchValue(event.target.value);
+  }
   return (
     <section className="home">
       <div className="overlay"></div>
@@ -29,7 +35,7 @@ function Home() {
           <div className="destinationInput">
             <label htmlFor="city">Search your destination:</label>
             <div className="input flex">
-              <input type="text" placeholder='Enter name here...' />
+              <input type="text" value={searchValue} onChange={handleInputChange} placeholder='Enter name here...' />
               <GrLocation className="icon" />
             </div>
           </div>
@@ -53,7 +59,7 @@ function Home() {
 
           <div className="searchOptions">
             <HiFilter className="icon"/>
-            <span>More Filters</span>
+            <span>Filter</span>
           </div>
         </div>
 

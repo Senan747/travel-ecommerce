@@ -36,6 +36,21 @@
             transform: translateY(5px);
         }
     }
+
+    .closeNavbar,
+    .toggleNavbar{
+        display: none;
+    }
+    .navLists{
+       .navItem{
+        color: var(--PrimaryColor);
+        padding-right: 20px;
+
+        a{
+            color:var(--SecondaryColor)
+        }
+       }
+    }
   
     @media screen and (max-width: 768px) {
         .navBar{
@@ -85,6 +100,7 @@
             }
 
             .closeNavbar{
+                display: inline;
                 position: absolute;
                 top: 1rem;
                 right: 1.5rem;
@@ -96,18 +112,19 @@
         .activeNavbar{
             top: 7rem;
         }
-
+        .toggleNavbar {
+                display: inline;
+                .icon{
+                    font-size: 25px;
+                    color: var(--PrimaryColor);
+                }
+                &:hover.icon{
+                    color:var(--SecondaryColor);
+                }
+            }
     }
 
-    .toggleNavbar {
-        .icon{
-            font-size: 25px;
-            color: var(--PrimaryColor);
-        }
-        &:hover.icon{
-            color:var(--SecondaryColor);
-        }
-    }
+    
 
 }
   

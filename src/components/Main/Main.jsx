@@ -87,7 +87,10 @@ const Data = [
   }
   
 ]
-function Main() {
+function Main(props) {
+  const filterData = Data.filter((id) => 
+    id.desTitle.toLowerCase().includes(props.searchValue.toLowerCase())
+  );
   return (
     <section className='main container section'>
         <div className="secTitle">
@@ -98,7 +101,7 @@ function Main() {
 
         <div className="secContent grid">
           {
-            Data.map(({id, imgSrc, desTitle, location, grade, fees, description}) => {
+            filterData.map(({id, imgSrc, desTitle, location, grade, fees, description}) => {
               return (
                 <div key={id} className='singleDestination'>
                   <div className="imageDiv">
